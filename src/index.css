@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-white text-gray-900;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: theme('fontFamily.playfair');
+  }
+}
+
+@layer components {
+  .slide-in {
+    opacity: 0;
+    transform: translateY(100px);
+    transition: all 1s ease-out;
+  }
+
+  .slide-in.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@layer utilities {
+  .bg-pattern-1 {
+    background-image: url('https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=2400&q=80');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .bg-pattern-2 {
+    background-image: url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=2400&q=80');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
